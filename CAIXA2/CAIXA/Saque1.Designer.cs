@@ -72,11 +72,10 @@
             // 
             this.lblMensagem.AutoSize = true;
             this.lblMensagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensagem.Location = new System.Drawing.Point(553, 390);
+            this.lblMensagem.Location = new System.Drawing.Point(207, 392);
             this.lblMensagem.Name = "lblMensagem";
-            this.lblMensagem.Size = new System.Drawing.Size(175, 31);
+            this.lblMensagem.Size = new System.Drawing.Size(0, 31);
             this.lblMensagem.TabIndex = 4;
-            this.lblMensagem.Text = "Informações";
             // 
             // btnValor
             // 
@@ -106,6 +105,7 @@
             // 
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.Location = new System.Drawing.Point(449, 225);
+            this.txtSenha.MaxLength = 5;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = 'o';
             this.txtSenha.Size = new System.Drawing.Size(100, 24);
@@ -114,9 +114,12 @@
             // txtValor
             // 
             this.txtValor.Location = new System.Drawing.Point(1012, 225);
+            this.txtValor.MaxLength = 9;
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(100, 20);
             this.txtValor.TabIndex = 2;
+            this.txtValor.TextChanged += new System.EventHandler(this.txtValor_TextChanged_1);
+            this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             // 
             // Saque1
             // 

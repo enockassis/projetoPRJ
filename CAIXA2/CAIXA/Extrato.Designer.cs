@@ -33,9 +33,16 @@
             this.lblPress = new System.Windows.Forms.Label();
             this.btnSair = new System.Windows.Forms.Button();
             this.txtSenha = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.btnSenha = new System.Windows.Forms.Button();
             this.lblMensagem = new System.Windows.Forms.Label();
+            this.dtgExtrato = new System.Windows.Forms.DataGridView();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_mov = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.exibirSaldoAtual = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgExtrato)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -73,7 +80,7 @@
             this.btnSair.BackColor = System.Drawing.Color.Brown;
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.ForeColor = System.Drawing.Color.Yellow;
-            this.btnSair.Location = new System.Drawing.Point(640, 596);
+            this.btnSair.Location = new System.Drawing.Point(558, 586);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(75, 75);
             this.btnSair.TabIndex = 5;
@@ -89,13 +96,6 @@
             this.txtSenha.PasswordChar = 'o';
             this.txtSenha.Size = new System.Drawing.Size(100, 24);
             this.txtSenha.TabIndex = 7;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(973, 315);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 8;
             // 
             // btnSenha
             // 
@@ -117,15 +117,70 @@
             this.lblMensagem.Size = new System.Drawing.Size(0, 31);
             this.lblMensagem.TabIndex = 10;
             // 
+            // dtgExtrato
+            // 
+            this.dtgExtrato.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgExtrato.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nome,
+            this.Valor,
+            this.Column2,
+            this.id_mov});
+            this.dtgExtrato.Location = new System.Drawing.Point(775, 293);
+            this.dtgExtrato.Name = "dtgExtrato";
+            this.dtgExtrato.Size = new System.Drawing.Size(446, 215);
+            this.dtgExtrato.TabIndex = 11;
+            // 
+            // nome
+            // 
+            this.nome.HeaderText = "nome";
+            this.nome.Name = "nome";
+            // 
+            // Valor
+            // 
+            this.Valor.HeaderText = "valor";
+            this.Valor.Name = "Valor";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "tipo";
+            this.Column2.Name = "Column2";
+            // 
+            // id_mov
+            // 
+            this.id_mov.DataPropertyName = "(    )";
+            this.id_mov.HeaderText = "Data";
+            this.id_mov.Name = "id_mov";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(769, 560);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(180, 31);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Saldo Atual: ";
+            // 
+            // exibirSaldoAtual
+            // 
+            this.exibirSaldoAtual.AutoSize = true;
+            this.exibirSaldoAtual.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exibirSaldoAtual.Location = new System.Drawing.Point(955, 560);
+            this.exibirSaldoAtual.Name = "exibirSaldoAtual";
+            this.exibirSaldoAtual.Size = new System.Drawing.Size(0, 31);
+            this.exibirSaldoAtual.TabIndex = 13;
+            // 
             // Extrato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1284, 749);
+            this.Controls.Add(this.exibirSaldoAtual);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dtgExtrato);
             this.Controls.Add(this.lblMensagem);
             this.Controls.Add(this.btnSenha);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.lblPress);
@@ -134,6 +189,7 @@
             this.Name = "Extrato";
             this.Text = "Extrato";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            ((System.ComponentModel.ISupportInitialize)(this.dtgExtrato)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,8 +202,14 @@
         private System.Windows.Forms.Label lblPress;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.TextBox txtSenha;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button btnSenha;
         private System.Windows.Forms.Label lblMensagem;
+        private System.Windows.Forms.DataGridView dtgExtrato;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_mov;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label exibirSaldoAtual;
     }
 }
