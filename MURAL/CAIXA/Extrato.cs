@@ -18,6 +18,8 @@ namespace CAIXA
         public Extrato()
         {
             InitializeComponent();
+            dtgExtrato.Visible = false;
+            LeitorDeTexto.Instancia.Falar("Por favor digite sua senha");
         }        
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -38,35 +40,37 @@ namespace CAIXA
                 //recebendo a senha digitada pelo usuario e convertendo pra int
                 var senhaT = Int32.Parse(txtSenha.Text);
 
-                MySqlCommand objCmd = new MySqlCommand("select nome,valor,tipo,data from cliente inner join movimentacao on id_cliente=id_mov where senha ='" + senhaT + "' order by(data)", objcon);
+                MySqlCommand objCmd = new MySqlCommand("select senha,nome,valor,tipo,data from cliente inner join movimentacao on id_cliente=id_mov where senha ='" + senhaT + "' order by(data)", objcon);
                 // objCmd.Parameters.Clear();
 
                 objCmd.CommandType = CommandType.Text;
                 //recebe o conteudo do banco
                 MySqlDataReader dr;
-               // MySqlDataAdapter db = new  MySqlDataAdapter();
-                
-               // DataTable dt = new DataTable();
-               // db.Fill(dt);
 
+                DataTable dt = new DataTable();
+
+                dt.Load(objCmd.ExecuteReader());
+                
+                dtgExtrato.DataSource = dt;
                 
                 dr = objCmd.ExecuteReader();
                 dr.Read();
-                //dtgExtrato.DataSource = dr;
-
+               
                 try
                 {
                     //retornando a senha do banco
                     var senhaBd = dr.GetInt32(0);
+
                     if (senhaT.Equals(senhaBd))
                     {
-                        objCmd = new MySqlCommand("select senha,sum(valor) as valor from cliente inner join movimentacao on id_cliente=id_mov where senha ='" + senhaT + "'", objcon);
                         
-
-                        exibirSaldoAtual.Text = dr.GetDouble(1).ToString("N");
-                      
-                    }
-
+                        //ocultando a coluna senha no datagridview
+                        dtgExtrato.Columns["senha"].Visible = false;
+                        //exibindo o datagridview
+                       dtgExtrato.Visible = true;
+                       dtgExtrato.AutoResizeRows();                                   
+                       
+                    }              
                 }
                 catch
                 {
@@ -77,10 +81,23 @@ namespace CAIXA
             }
             catch
             {
-                MessageBox.Show("Nao conectado");
+                lblMensagem.Text=("Nao conectado");
             }
-            await Task.Delay(3000);
+            await Task.Delay(30000);
             this.Close();
+        }
+
+        private void txtSenha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dtgExtrato_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }  
 }

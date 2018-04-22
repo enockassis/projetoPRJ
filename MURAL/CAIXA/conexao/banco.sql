@@ -22,8 +22,8 @@ CREATE TABLE cliente (
 select *  from cliente;
 
 select * from movimentacao;
-select nome,valor,tipo,data from cliente inner join movimentacao on id_cliente=id_mov where senha =1010 order by(data);
-
+select nome,valor,tipo,data from cliente inner join movimentacao on id_cliente=id_mov where senha =1515 order by(data);
+select senha from cliente inner join movimentacao on id_cliente=id_mov where senha = 1010;
 insert into cliente (nome,senha)values("teste1",1010);
 insert into cliente (nome,senha)values("pdr1",1111);
 insert into cliente (nome,senha)values("pdr2",1313);

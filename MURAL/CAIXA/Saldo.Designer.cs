@@ -1,6 +1,6 @@
 ﻿namespace CAIXA
 {
-    partial class lblSaldo
+    partial class Saldo
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,6 @@
             this.lblMensagem = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnConfirme = new System.Windows.Forms.Button();
-            this.lblSaida = new System.Windows.Forms.Label();
             this.lblValor = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -48,6 +47,7 @@
             this.txtSenha.PasswordChar = 'o';
             this.txtSenha.Size = new System.Drawing.Size(140, 24);
             this.txtSenha.TabIndex = 1;
+            this.txtSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSenha_KeyPress);
             // 
             // label1
             // 
@@ -74,7 +74,7 @@
             this.btnSair.BackColor = System.Drawing.Color.Brown;
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.ForeColor = System.Drawing.Color.Yellow;
-            this.btnSair.Location = new System.Drawing.Point(671, 616);
+            this.btnSair.Location = new System.Drawing.Point(659, 613);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(75, 67);
             this.btnSair.TabIndex = 7;
@@ -86,7 +86,7 @@
             // 
             this.lblMensagem.AutoSize = true;
             this.lblMensagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensagem.Location = new System.Drawing.Point(283, 499);
+            this.lblMensagem.Location = new System.Drawing.Point(549, 508);
             this.lblMensagem.Name = "lblMensagem";
             this.lblMensagem.Size = new System.Drawing.Size(0, 31);
             this.lblMensagem.TabIndex = 9;
@@ -111,15 +111,6 @@
             this.btnConfirme.Text = "Confirme";
             this.btnConfirme.UseVisualStyleBackColor = true;
             this.btnConfirme.Click += new System.EventHandler(this.btnConfirme_Click);
-            // 
-            // lblSaida
-            // 
-            this.lblSaida.AutoSize = true;
-            this.lblSaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSaida.Location = new System.Drawing.Point(1009, 371);
-            this.lblSaida.Name = "lblSaida";
-            this.lblSaida.Size = new System.Drawing.Size(0, 24);
-            this.lblSaida.TabIndex = 12;
             // 
             // lblValor
             // 
@@ -147,7 +138,6 @@
             this.ClientSize = new System.Drawing.Size(1086, 749);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblValor);
-            this.Controls.Add(this.lblSaida);
             this.Controls.Add(this.btnConfirme);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblMensagem);
@@ -171,7 +161,6 @@
         private System.Windows.Forms.Label lblMensagem;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnConfirme;
-        private System.Windows.Forms.Label lblSaida;
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.Label label3;
     }

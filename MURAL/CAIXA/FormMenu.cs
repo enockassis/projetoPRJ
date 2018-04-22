@@ -11,27 +11,26 @@ using System.Windows.Forms;
 
 namespace CAIXA
 {
-    public partial class Form1 : Form
+    public partial class FormMenu : Form
     {
-        public Form1()
+        private Form formConta;
+        public FormMenu(Form formConta)
         {
+            this.formConta = formConta;
             InitializeComponent();
+            
         }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             try
             {
-                //AcessoDados dados = new AcessoDados();
-
-                //DataTable tabelaCliente = dados.BuscarDados(@"SELECT * FROM cliente");
-                //DataTable tabelaConta = dados.BuscarDados(@"SELECT * FROM conta");
-                //if (dados.BuscarDados("SELECT * FROM conta WHERE numConta = 13").Rows.Count > 0)
-                //    throw new Exception("Já existe uma conta com este número");
-
-                //dados.ExecutarComando(@"insert into conta (saldo, numConta) values (-100, ""13"")");
-                lblSaldo sal = new lblSaldo();
+                Saldo sal = new Saldo(this);
+                
                 sal.Show();
+                this.Hide();
             }
             catch (Exception ex)
             {
@@ -43,20 +42,16 @@ namespace CAIXA
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Deposito dep = new Deposito();
+            Deposito dep = new Deposito(this);
             dep.Show();
         }
      
         private void button2_Click(object sender, EventArgs e)
         {
-             Saque1 saq = new Saque1();
+             Saque1 saq = new Saque1(this);
             saq.Show();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+        }     
+    
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -67,6 +62,31 @@ namespace CAIXA
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button_MouseHover(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            LeitorDeTexto.Instancia.Falar((string)btn.Tag);
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            LeitorDeTexto.Instancia.Falar("Por favor, escolha uma das opções");
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            formConta.Show();
+            
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+           // this.Close();
+            Application.Exit();
         }
     }
 }

@@ -15,16 +15,26 @@ namespace CAIXA
         private string _stringConexao;
         private MySqlConnection _conexao;
 
-        public AcessoDados()
+        private static readonly AcessoDados instancia = new AcessoDados();
+
+        private AcessoDados()
         {
             this._stringConexao = ConfigurationManager.ConnectionStrings["contabancariaConnectionString"].ConnectionString;
             this._conexao = new MySqlConnection(_stringConexao);
         }
 
+        public static AcessoDados Instancia
+        {
+            get
+            {
+                return instancia;
+            }
+        }
+
         public string StringConexao
         {
             get { return this._stringConexao; }
-            set { this._stringConexao = value;}
+            set { this._stringConexao = value; }
         }
 
         public MySqlConnection Conexao
@@ -34,6 +44,7 @@ namespace CAIXA
         }
 
         public DataTable BuscarDados(string comando)
+           
         {
             MySqlCommand cmd = new MySqlCommand();
             cmd.CommandType = CommandType.Text;
@@ -57,6 +68,24 @@ namespace CAIXA
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = comando;
             cmd.Connection = Conexao;
+
+            cmd.Connection.Open();
+
+            cmd.ExecuteNonQuery();
+
+            cmd.Connection.Close();
+        }
+
+        public void ExecutarComando(string comando, params MySqlParameter[] parametros)
+        {
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = comando;
+            cmd.Connection = Conexao;
+            foreach (var parametro in parametros)
+            {
+                cmd.Parameters.Add(parametro);
+            }
 
             cmd.Connection.Open();
 

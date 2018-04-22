@@ -37,7 +37,7 @@
             this.txtValor = new System.Windows.Forms.TextBox();
             this.btnValor = new System.Windows.Forms.Button();
             this.lblInforme = new System.Windows.Forms.Label();
-            this.lblMen = new System.Windows.Forms.Label();
+            this.lblMensagem1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -76,7 +76,7 @@
             // 
             this.lblMensagem.AutoSize = true;
             this.lblMensagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensagem.Location = new System.Drawing.Point(200, 493);
+            this.lblMensagem.Location = new System.Drawing.Point(562, 490);
             this.lblMensagem.Name = "lblMensagem";
             this.lblMensagem.Size = new System.Drawing.Size(0, 31);
             this.lblMensagem.TabIndex = 4;
@@ -103,8 +103,9 @@
             this.txtSenhaD.Name = "txtSenhaD";
             this.txtSenhaD.PasswordChar = 'o';
             this.txtSenhaD.Size = new System.Drawing.Size(100, 24);
-            this.txtSenhaD.TabIndex = 7;
+            this.txtSenhaD.TabIndex = 0;
             this.txtSenhaD.UseSystemPasswordChar = true;
+            this.txtSenhaD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSenhaD_KeyPress);
             // 
             // txtValor
             // 
@@ -138,15 +139,15 @@
             this.lblInforme.TabIndex = 11;
             this.lblInforme.Text = "Informe o valor";
             // 
-            // lblMen
+            // lblMensagem1
             // 
-            this.lblMen.AutoSize = true;
-            this.lblMen.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMen.Location = new System.Drawing.Point(650, 465);
-            this.lblMen.Name = "lblMen";
-            this.lblMen.Size = new System.Drawing.Size(0, 29);
-            this.lblMen.TabIndex = 12;
-            this.lblMen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMensagem1.AutoSize = true;
+            this.lblMensagem1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMensagem1.Location = new System.Drawing.Point(363, 493);
+            this.lblMensagem1.Name = "lblMensagem1";
+            this.lblMensagem1.Size = new System.Drawing.Size(0, 29);
+            this.lblMensagem1.TabIndex = 12;
+            this.lblMensagem1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Deposito
             // 
@@ -154,7 +155,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1284, 749);
-            this.Controls.Add(this.lblMen);
+            this.Controls.Add(this.lblMensagem1);
             this.Controls.Add(this.lblInforme);
             this.Controls.Add(this.btnValor);
             this.Controls.Add(this.txtValor);
@@ -184,6 +185,6 @@
         private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.Button btnValor;
         private System.Windows.Forms.Label lblInforme;
-        private System.Windows.Forms.Label lblMen;
+        private System.Windows.Forms.Label lblMensagem1;
     }
 }

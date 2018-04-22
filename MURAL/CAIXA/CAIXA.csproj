@@ -39,6 +39,7 @@
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Speech" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -52,6 +53,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcessoDados.cs" />
+    <Compile Include="Conta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Conta.Designer.cs">
+      <DependentUpon>Conta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContaCliente.cs" />
     <Compile Include="Deposito.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,11 +72,11 @@
     <Compile Include="Extrato.Designer.cs">
       <DependentUpon>Extrato.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="FormMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormMenu.Designer.cs">
+      <DependentUpon>FormMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -84,14 +92,18 @@
     <Compile Include="Saque1.Designer.cs">
       <DependentUpon>Saque1.cs</DependentUpon>
     </Compile>
+    <Compile Include="LeitorDeTexto.cs" />
+    <EmbeddedResource Include="Conta.resx">
+      <DependentUpon>Conta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Deposito.resx">
       <DependentUpon>Deposito.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Extrato.resx">
       <DependentUpon>Extrato.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FormMenu.resx">
+      <DependentUpon>FormMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
