@@ -40,58 +40,72 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
+            this.lblMensagem = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Blue;
+            this.button1.BackColor = System.Drawing.Color.CornflowerBlue;
             this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Location = new System.Drawing.Point(215, 348);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 75);
             this.button1.TabIndex = 3;
             this.button1.Tag = "Saldo";
+            this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button1_KeyDown);
             this.button1.MouseHover += new System.EventHandler(this.button_MouseHover);
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Location = new System.Drawing.Point(492, 348);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 75);
             this.button2.TabIndex = 4;
             this.button2.Tag = "Saque";
+            this.button2.Text = "2";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            
             this.button2.MouseHover += new System.EventHandler(this.button_MouseHover);
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.Green;
-            this.button3.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.button3.BackColor = System.Drawing.Color.LimeGreen;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Black;
             this.button3.Location = new System.Drawing.Point(748, 348);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 75);
             this.button3.TabIndex = 5;
             this.button3.Tag = "Depósito";
+            this.button3.Text = "3";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+           
             this.button3.MouseHover += new System.EventHandler(this.button_MouseHover);
             // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Orange;
-            this.button4.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.Black;
             this.button4.Location = new System.Drawing.Point(1010, 348);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 75);
             this.button4.TabIndex = 6;
             this.button4.Tag = "Extrato";
+            this.button4.Text = "4";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            
             this.button4.MouseHover += new System.EventHandler(this.button_MouseHover);
             // 
             // button5
@@ -157,11 +171,11 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label5.Location = new System.Drawing.Point(474, 187);
+            this.label5.Location = new System.Drawing.Point(307, 182);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(375, 42);
+            this.label5.Size = new System.Drawing.Size(687, 42);
             this.label5.TabIndex = 12;
-            this.label5.Text = "Escolha uma  opção";
+            this.label5.Text = "Digite o número para  opção desejada";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
@@ -187,6 +201,16 @@
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // lblMensagem
+            // 
+            this.lblMensagem.AutoSize = true;
+            this.lblMensagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMensagem.ForeColor = System.Drawing.Color.Black;
+            this.lblMensagem.Location = new System.Drawing.Point(364, 496);
+            this.lblMensagem.Name = "lblMensagem";
+            this.lblMensagem.Size = new System.Drawing.Size(0, 37);
+            this.lblMensagem.TabIndex = 15;
+            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -195,6 +219,7 @@
             this.CancelButton = this.button5;
             this.ClientSize = new System.Drawing.Size(1284, 749);
             this.ControlBox = false;
+            this.Controls.Add(this.lblMensagem);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -213,6 +238,7 @@
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Shown += new System.EventHandler(this.Form1_Shown);
+            
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,6 +257,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label lblMensagem;
     }
 }
 

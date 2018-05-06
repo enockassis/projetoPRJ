@@ -24,7 +24,7 @@ namespace CAIXA
             InitializeComponent();
               
             
-            LeitorDeTexto.Instancia.Falar("Por favor digite sua senha e o valor do saque");
+            LeitorDeTexto.Instancia.Falar("Você escolheu saque \n Por favor digite sua senha e o valor do saque");
 
         }
 

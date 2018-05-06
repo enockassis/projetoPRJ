@@ -19,7 +19,7 @@ namespace CAIXA
         {
             this.formMenu = formMenu;
             InitializeComponent();
-            LeitorDeTexto.Instancia.Falar( "Por favor digite sua senha");
+            LeitorDeTexto.Instancia.Falar( "Você escolheu saldo \n Por favor digite sua senha");
         }    
 
         private void btnSair_Click(object sender, EventArgs e)

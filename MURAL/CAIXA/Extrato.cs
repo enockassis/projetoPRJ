@@ -19,7 +19,7 @@ namespace CAIXA
         {
             InitializeComponent();
             dtgExtrato.Visible = false;
-            LeitorDeTexto.Instancia.Falar("Por favor digite sua senha");
+            LeitorDeTexto.Instancia.Falar("Você escolheu extrato \n Por favor digite sua senha");
         }        
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -27,8 +27,9 @@ namespace CAIXA
             Close();
         }
 
-        private async void btnSenha_Click(object sender, EventArgs e)
+        private void btnSenha_Click(object sender, EventArgs e)
         {
+
             try
             {
                 //passa a string de conexao
@@ -81,10 +82,9 @@ namespace CAIXA
             }
             catch
             {
-                lblMensagem.Text=("Nao conectado");
+                lblMensagem.Text=("Não conectado");
             }
-            await Task.Delay(30000);
-            this.Close();
+            
         }
 
         private void txtSenha_KeyPress(object sender, KeyPressEventArgs e)

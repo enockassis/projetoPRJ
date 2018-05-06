@@ -22,29 +22,13 @@ CREATE TABLE cliente (
 select *  from cliente;
 
 select * from movimentacao;
- /*drop table movimentacao;
- drop table cliente;*/
-select nome,valor,tipo,data from cliente inner join movimentacao on id_cliente=id_mov where senha =1010 order by(data);
-
-update cliente set senha= 1111 where id_cliente = 7;
-
-insert into movimentacao(id_mov,valor,tipo,data)values(1,100,"D",now());
-insert into movimentacao(id_mov,valor,tipo,data)values(2,100,"D",now());
-insert into movimentacao(id_mov,valor,tipo,data)values(3,100,"D",now());
-insert into movimentacao(id_mov,valor,tipo,data)values(4,100,"D",now());
-insert into movimentacao(id_mov,valor,tipo,data)values(5,100,"D",now());
-insert into movimentacao(id_mov,valor,tipo,data)values(6,100,"D",now());
-insert into movimentacao(id_mov,valor,tipo,data)values(7,100,"D",now());
-
-
-insert into cliente (nome,senha)values("Lee",1212);
-insert into cliente (nome,senha)values("Jose",1515);
-insert into cliente (nome,senha)values("Pedro",1616);
-insert into cliente (nome,senha)values("Martha",1010);
-insert into cliente (nome,senha)values("Fernanda",1313);
-insert into cliente (nome,senha)values("Margareth",1414);
-insert into cliente (nome,senha)values("Bernardia",1515);
-
+select nome,valor,tipo,data from cliente inner join movimentacao on id_cliente=id_mov where senha =1515 order by(data);
+select senha from cliente inner join movimentacao on id_cliente=id_mov where senha = 1010;
+insert into cliente (nome,senha)values("teste1",1010);
+insert into cliente (nome,senha)values("pdr1",1111);
+insert into cliente (nome,senha)values("pdr2",1313);
+insert into cliente (nome,senha)values("pdr5",1414);
+insert into cliente (nome,senha)values("pdr3",1515);
 /*
  insert into movimentacao(id_mov,valor,tipo,data)values(1,-25,"S",now());
  select senha from cliente inner join movimentacao on id_cliente=id_mov where senha =2050;

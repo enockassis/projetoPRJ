@@ -103,7 +103,7 @@
             this.txtSenhaD.Name = "txtSenhaD";
             this.txtSenhaD.PasswordChar = 'o';
             this.txtSenhaD.Size = new System.Drawing.Size(100, 24);
-            this.txtSenhaD.TabIndex = 0;
+            this.txtSenhaD.TabIndex = 1;
             this.txtSenhaD.UseSystemPasswordChar = true;
             this.txtSenhaD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSenhaD_KeyPress);
             // 
@@ -114,7 +114,7 @@
             this.txtValor.MaxLength = 9;
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(100, 24);
-            this.txtValor.TabIndex = 8;
+            this.txtValor.TabIndex = 2;
             this.txtValor.TextChanged += new System.EventHandler(this.txtValor_TextChanged_1);
             this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             // 
@@ -128,6 +128,7 @@
             this.btnValor.Text = "Confirme";
             this.btnValor.UseVisualStyleBackColor = true;
             this.btnValor.Click += new System.EventHandler(this.btnValor_Click);
+           
             // 
             // lblInforme
             // 

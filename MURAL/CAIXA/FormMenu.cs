@@ -73,13 +73,13 @@ namespace CAIXA
 
         private void Form1_Shown(object sender, EventArgs e)
         {
-            LeitorDeTexto.Instancia.Falar("Por favor, escolha uma das opções");
+            LeitorDeTexto.Instancia.Falar("Digite o número para a opção desejada");
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             this.Close();
-            formConta.Show();
+            formConta.Show();            
             
         }
 
@@ -88,5 +88,41 @@ namespace CAIXA
            // this.Close();
             Application.Exit();
         }
+
+        private void button1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.D1 || e.KeyCode == Keys.NumPad1)
+            {
+                try
+                {
+                    Saldo sal = new Saldo(this);
+
+                    sal.Show();
+                    this.Hide();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }else if (e.KeyCode == Keys.D2 || e.KeyCode == Keys.NumPad2)
+            {
+                Saque1 saq = new Saque1(this);
+                saq.Show();
+            }else if (e.KeyCode == Keys.D3 || e.KeyCode == Keys.NumPad3)
+            {
+                Deposito dep = new Deposito(this);
+                dep.Show();
+            }else if (e.KeyCode == Keys.D4 || e.KeyCode == Keys.NumPad4)
+            {
+                Extrato ext = new Extrato();
+                ext.Show();
+            }
+            else if (e.KeyCode <=0 || e.KeyCode >= Keys.D5)
+            { 
+                LeitorDeTexto.Instancia.Falar("Digite \n 1 para saldo \n 2 para saque \n 3 para depósito \n ou 4 para extrato");
+            }
+
+        }
+
     }
 }

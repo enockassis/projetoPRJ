@@ -22,33 +22,33 @@ namespace CAIXA
         {
             this.formMenu = formMenu;
             InitializeComponent();           
-            LeitorDeTexto.Instancia.Falar("Digite sua senha e o valor");           
+            LeitorDeTexto.Instancia.Falar("Você escolheu depósito \nDigite sua senha e o valor");           
         }       
        
     private async void btnValor_Click(object sender, EventArgs e)
-        {            
-            try
-            {
-                //recebendo a senha do usuário e convertendo-a para int
-                var senhaT = (txtSenhaD.Text);
-                if (senhaT.Equals(ContaCliente.Instancia.Senha))
+        {
+                try
                 {
-                    double depositoTxt = double.Parse(txtValor.Text);
-
-                    DataTable dadosDeposito = AcessoDados.Instancia.BuscarDados("Select SUM(valor) as Valor FROM movimentacao where id_mov = " + ContaCliente.Instancia.IdCliente);
-                    var valorBD = (double)dadosDeposito.Rows[0]["VALOR"];
-
-                    //condição para verifica se o valor esta de acordo para o deposito 
-                    if (depositoTxt <= 1 || depositoTxt == 3)
+                    //recebendo a senha do usuário e convertendo-a para int
+                    var senhaT = (txtSenhaD.Text);
+                    if (senhaT.Equals(ContaCliente.Instancia.Senha))
                     {
-                        lblMensagem.Text = "Esse valor não pode ser depositado!";
-                        LeitorDeTexto.Instancia.Falar(lblMensagem.Text);
-                        await Task.Delay(3000);
-                        this.Close();
-                        formMenu.Show();
-                    }
-                    else
-                    {
+                        double depositoTxt = double.Parse(txtValor.Text);
+
+                        DataTable dadosDeposito = AcessoDados.Instancia.BuscarDados("Select SUM(valor) as Valor FROM movimentacao where id_mov = " + ContaCliente.Instancia.IdCliente);
+                        var valorBD = (double)dadosDeposito.Rows[0]["VALOR"];
+
+                        //condição para verifica se o valor esta de acordo para o deposito 
+                        if (depositoTxt <= 1 || depositoTxt == 3)
+                        {
+                            lblMensagem.Text = "Esse valor não pode ser depositado!";
+                            LeitorDeTexto.Instancia.Falar(lblMensagem.Text);
+                            await Task.Delay(3000);
+                            this.Close();
+                            formMenu.Show();
+                        }
+                        else
+                        {
 
                             MySqlParameter idCliente = new MySqlParameter
                             {
@@ -81,11 +81,11 @@ namespace CAIXA
                             lblMensagem.Text = "Depósito realizado";
                             LeitorDeTexto.Instancia.Falar("Depósito efetuado no valor de  R$ " + depositoTxt.ToString("N2"));
 
-                            await Task.Delay(3000);
+                            await Task.Delay(5000);
                             this.Close();
                             formMenu.Show();
-                    }
-                       
+                        }
+
                     }
                 }
                 catch
@@ -96,6 +96,7 @@ namespace CAIXA
                     this.Close();
                     formMenu.Show();
                 }
+            
 
                 //passa a string de conexao
                 // MySqlConnection objcon = new MySqlConnection("server=localhost;port=3306;User Id=root;database=contabancaria;password=NL5KQMOJ");
@@ -237,5 +238,6 @@ namespace CAIXA
                 e.Handled = true;
             }
         }
+
     }       
  }
