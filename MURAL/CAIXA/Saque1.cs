@@ -15,17 +15,13 @@ namespace CAIXA
     public partial class Saque1 : Form
     {
         public int inteiro;
-
         private Form formMenu;
         
         public Saque1(Form formMenu)
         {
             this.formMenu = formMenu;
-            InitializeComponent();
-              
-            
+            InitializeComponent();            
             LeitorDeTexto.Instancia.Falar("Você escolheu saque \n Por favor digite sua senha e o valor do saque");
-
         }
 
         private async void btnValor_Click(object sender, EventArgs e)
@@ -38,10 +34,11 @@ namespace CAIXA
                 {
                     double saqueTxt = double.Parse(textValor.Text);
                     DataTable dadosSaldo = AcessoDados.Instancia.BuscarDados("SELECT SUM(valor) as VALOR FROM movimentacao WHERE id_mov = " + ContaCliente.Instancia.IdCliente);
-                    // DataTable dadosSaldo = AcessoDados.Instancia.BuscarDados("SELECT SUM(valor) AS VALOR, nome, FROM movimentacao WHERE id_mov = " + ContaCliente.Instancia.IdCliente);
-                    var valorBD = (double)dadosSaldo.Rows[0]["VALOR"];
-
                     
+                    var valorBD = (double)dadosSaldo.Rows[0]["VALOR"];
+                    
+
+
                     if (saqueTxt <= 1 || saqueTxt == 3) {
                         lblMensagem.Text = "Esse valor não pode ser sacado!!";
                         LeitorDeTexto.Instancia.Falar(lblMensagem.Text);
@@ -88,6 +85,10 @@ namespace CAIXA
                         }
 
                     }
+                }else
+                {
+                    LeitorDeTexto.Instancia.Falar("Número da conta ou senha inválidos");
+                    lblMensagem1.Text = "Número da conta ou senha inválidos";
                 }
             }
             catch
@@ -123,7 +124,7 @@ namespace CAIXA
             catch (Exception)
             {
                 MessageBox.Show("Saque não efetuado");
-                 //lblMensagem.Text = "Saque não Efetuado";
+                 
             }
             
         }                

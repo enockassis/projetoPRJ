@@ -128,7 +128,6 @@
             this.btnValor.Text = "Confirme";
             this.btnValor.UseVisualStyleBackColor = true;
             this.btnValor.Click += new System.EventHandler(this.btnValor_Click);
-           
             // 
             // lblInforme
             // 
@@ -166,10 +165,12 @@
             this.Controls.Add(this.lblValor);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Deposito";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Deposito";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            
             this.ResumeLayout(false);
             this.PerformLayout();
 

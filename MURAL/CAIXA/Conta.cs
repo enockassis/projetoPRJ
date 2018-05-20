@@ -29,7 +29,10 @@ namespace CAIXA
             {
                 lblMensagem.Text = "Digite o número de sua conta e a sua senha!";
                 LeitorDeTexto.Instancia.Falar(lblMensagem.Text);
-                txtConta.Focus();                
+                txtConta.Focus();
+                await Task.Delay(3000);
+                Conta conta = new Conta();
+                conta.Show();
             }
             else
             {
@@ -47,9 +50,7 @@ namespace CAIXA
 
                 else
                 {
-                   // lblMensagem1.Text = "Se necessitar de ajuda, coloque o fone de ouvido para receber instruções";
-                    //LeitorDeTexto.Instancia.Falar(lblMensagem.Text);
-                    //await Task.Delay(7000);
+                   
                     ContaCliente.Instancia.IdCliente = int.Parse(txtConta.Text);
                     ContaCliente.Instancia.Senha = (txtSenha.Text);
                     txtSenha.Text = "";

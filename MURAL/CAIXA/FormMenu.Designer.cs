@@ -39,7 +39,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.lblMensagem = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -52,13 +52,14 @@
             this.button1.Location = new System.Drawing.Point(215, 348);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 75);
-            this.button1.TabIndex = 3;
+            this.button1.TabIndex = 1;
             this.button1.Tag = "Saldo";
             this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             this.button1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button1_KeyDown);
-            this.button1.MouseHover += new System.EventHandler(this.button_MouseHover);
+            this.button1.MouseEnter += new System.EventHandler(this.button_MouseHover);
+            this.button1.MouseHover += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -73,8 +74,7 @@
             this.button2.Text = "2";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            
-            this.button2.MouseHover += new System.EventHandler(this.button_MouseHover);
+            this.button2.MouseHover += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -89,8 +89,7 @@
             this.button3.Text = "3";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-           
-            this.button3.MouseHover += new System.EventHandler(this.button_MouseHover);
+            this.button3.MouseHover += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -105,8 +104,7 @@
             this.button4.Text = "4";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            
-            this.button4.MouseHover += new System.EventHandler(this.button_MouseHover);
+            this.button4.MouseHover += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -189,17 +187,17 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "Insira seu cartão";
             // 
-            // button6
+            // btnCancelar
             // 
-            this.button6.BackColor = System.Drawing.Color.Brown;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(726, 613);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(139, 75);
-            this.button6.TabIndex = 14;
-            this.button6.Text = "Cancelar";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btnCancelar.BackColor = System.Drawing.Color.Brown;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(726, 613);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(139, 75);
+            this.btnCancelar.TabIndex = 14;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lblMensagem
             // 
@@ -220,7 +218,7 @@
             this.ClientSize = new System.Drawing.Size(1284, 749);
             this.ControlBox = false;
             this.Controls.Add(this.lblMensagem);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -238,7 +236,6 @@
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Shown += new System.EventHandler(this.Form1_Shown);
-            
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,7 +253,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lblMensagem;
     }
 }

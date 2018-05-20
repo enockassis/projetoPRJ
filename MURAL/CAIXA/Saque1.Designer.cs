@@ -147,6 +147,7 @@
             this.Controls.Add(this.lblValor);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Saque1";
             this.Text = "Saque1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

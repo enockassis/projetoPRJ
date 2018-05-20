@@ -55,7 +55,7 @@ namespace CAIXA
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Extrato ext = new Extrato();
+            Extrato ext = new Extrato(this);
             ext.Show();
         }
 
@@ -76,7 +76,7 @@ namespace CAIXA
             LeitorDeTexto.Instancia.Falar("Digite o número para a opção desejada");
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
             formConta.Show();            
@@ -85,7 +85,7 @@ namespace CAIXA
 
         private void button5_Click(object sender, EventArgs e)
         {
-           // this.Close();
+        
             Application.Exit();
         }
 
@@ -114,12 +114,12 @@ namespace CAIXA
                 dep.Show();
             }else if (e.KeyCode == Keys.D4 || e.KeyCode == Keys.NumPad4)
             {
-                Extrato ext = new Extrato();
+                Extrato ext = new Extrato(this);
                 ext.Show();
             }
             else if (e.KeyCode <=0 || e.KeyCode >= Keys.D5)
             { 
-                LeitorDeTexto.Instancia.Falar("Digite \n 1 para saldo \n 2 para saque \n 3 para depósito \n ou 4 para extrato");
+                LeitorDeTexto.Instancia.Falar("Digite 1 para saldo \n 2 para saque \n 3 para depósito \n ou 4 para extratoo!");
             }
 
         }

@@ -44,7 +44,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(388, 78);
+            this.label1.Location = new System.Drawing.Point(438, 81);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(452, 42);
             this.label1.TabIndex = 0;
@@ -55,7 +55,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(389, 185);
+            this.label2.Location = new System.Drawing.Point(439, 188);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(232, 31);
             this.label2.TabIndex = 1;
@@ -65,7 +65,7 @@
             // 
             this.lblPress.AutoSize = true;
             this.lblPress.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPress.Location = new System.Drawing.Point(793, 304);
+            this.lblPress.Location = new System.Drawing.Point(843, 307);
             this.lblPress.Name = "lblPress";
             this.lblPress.Size = new System.Drawing.Size(0, 31);
             this.lblPress.TabIndex = 2;
@@ -86,7 +86,7 @@
             // txtSenha
             // 
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(627, 192);
+            this.txtSenha.Location = new System.Drawing.Point(677, 195);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = 'o';
             this.txtSenha.Size = new System.Drawing.Size(134, 24);
@@ -96,7 +96,7 @@
             // btnSenha
             // 
             this.btnSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSenha.Location = new System.Drawing.Point(781, 192);
+            this.btnSenha.Location = new System.Drawing.Point(831, 195);
             this.btnSenha.Name = "btnSenha";
             this.btnSenha.Size = new System.Drawing.Size(134, 49);
             this.btnSenha.TabIndex = 1;
@@ -108,7 +108,7 @@
             // 
             this.lblMensagem.AutoSize = true;
             this.lblMensagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensagem.Location = new System.Drawing.Point(621, 545);
+            this.lblMensagem.Location = new System.Drawing.Point(557, 538);
             this.lblMensagem.Name = "lblMensagem";
             this.lblMensagem.Size = new System.Drawing.Size(0, 31);
             this.lblMensagem.TabIndex = 10;
@@ -117,7 +117,7 @@
             // 
             this.dtgExtrato.AllowUserToDeleteRows = false;
             this.dtgExtrato.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dtgExtrato.Location = new System.Drawing.Point(395, 304);
+            this.dtgExtrato.Location = new System.Drawing.Point(445, 307);
             this.dtgExtrato.Name = "dtgExtrato";
             this.dtgExtrato.ReadOnly = true;
             this.dtgExtrato.Size = new System.Drawing.Size(461, 203);
@@ -148,6 +148,7 @@
             this.Controls.Add(this.lblPress);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Extrato";
             this.Text = "Extrato";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

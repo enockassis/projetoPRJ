@@ -130,7 +130,7 @@
             this.label3.Size = new System.Drawing.Size(0, 29);
             this.label3.TabIndex = 14;
             // 
-            // lblSaldo
+            // Saldo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -145,7 +145,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtSenha);
-            this.Name = "lblSaldo";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "Saldo";
             this.Text = "Saldo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);

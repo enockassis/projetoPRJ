@@ -38,7 +38,7 @@ namespace CAIXA
                         DataTable dadosDeposito = AcessoDados.Instancia.BuscarDados("Select SUM(valor) as Valor FROM movimentacao where id_mov = " + ContaCliente.Instancia.IdCliente);
                         var valorBD = (double)dadosDeposito.Rows[0]["VALOR"];
 
-                        //condição para verifica se o valor esta de acordo para o deposito 
+                        //condição para verificar se o valor está de acordo para o depósito 
                         if (depositoTxt <= 1 || depositoTxt == 3)
                         {
                             lblMensagem.Text = "Esse valor não pode ser depositado!";
@@ -86,7 +86,11 @@ namespace CAIXA
                             formMenu.Show();
                         }
 
-                    }
+                }else
+                {
+                    LeitorDeTexto.Instancia.Falar("Número da conta ou senha inválidos");
+                    lblMensagem1.Text = "Número da conta ou senha inválidos";
+                }
                 }
                 catch
                 {
@@ -96,74 +100,12 @@ namespace CAIXA
                     this.Close();
                     formMenu.Show();
                 }
-            
-
-                //passa a string de conexao
-                // MySqlConnection objcon = new MySqlConnection("server=localhost;port=3306;User Id=root;database=contabancaria;password=NL5KQMOJ");
-                //abrindo a conexao
-                //objcon.Open();
-
-                //recebe a senha que foi informada pelo usuario no forma deposito
-                //var senha = Int32.Parse(txtSenhaD.Text);
-                
-               // MySqlCommand objCmd = new MySqlCommand("select senha,id_cliente from cliente  where senha ='" + senha + "'", objcon);
-                //limpa os paramentros
-               // objCmd.Parameters.Clear(); 
-
-          
-                //executa comando
-                //objCmd.CommandType = CommandType.Text;
-               
-                //recebe o conteudo do banco
-               // MySqlDataReader dr;
-               // dr = objCmd.ExecuteReader();
-
-                //dr.Read();
-                //senhaBd recebe a senha que esta salva no banco
-                //var senhaBd = dr.GetInt32(0);
-                //recebe o saldo salvo no banco                
-                //int ID_CLIENTE = dr.GetInt32(1);
-                //recebe o valor informado pelo usuario para add no banco
-                //double depoTxt = double.Parse(txtSenhaD.Text);
-                //double depoTxt = double.Parse(txtValor.Text);
-                //string tipo = "D";
-
-                
-               // if (senha.Equals(senhaBd))
-               // {
-               ///       try
-                        
-                //        {
-                        
-                    //    depoTxt = System.Math.Floor(depoTxt);
-                   //     dr.Close();
-                   //     objCmd.Parameters.Clear();
-                        //objCmd.CommandText = "update cliente inner join conta on idConta=id set saldo='" + atualizarSaldo + "', dataD = now()  where senha = '" + senha + "'";
-                    //    objCmd.CommandText = "insert into movimentacao(id_mov,valor,tipo,data)values(?,?,?,now())";
-
-                   //     objCmd.Parameters.Add("@id_mov", MySqlDbType.Int32).Value = ID_CLIENTE;
-                   //     objCmd.Parameters.Add("@valor", MySqlDbType.Double).Value = depoTxt;
-                  //      objCmd.Parameters.Add("@tipo", MySqlDbType.String).Value = tipo;
-                       
-                   //    objCmd.ExecuteNonQuery();
-                  //      lblMensagem.Text = "Depósito efetuado no valor de "+ depoTxt + "reais";                       
-                   //     LeitorDeTexto.Instancia.Falar(lblMensagem.Text);
-                    //    lblMensagem.Text = "Depósito Realizado!";
-                    //    await Task.Delay(3000);
-                  //  }
-                     //   catch (MySqlException ex)
-                   //     {
-                   //         lblMensagem.Text = "Deposito não realizado";                        
-                  //      }
-                    
-             //   }
-             //   }catch(MySqlException ex)
-              //      {
-                 //       lblMensagem.Text = "Senha Inválida";                
-              //      }
-
-             //   await Task.Delay(3000);
-            //    this.Close();
+            finally
+            {
+                await Task.Delay(3000);
+                this.Close();
+                formMenu.Show();
+            }          
 
        }
 
@@ -239,5 +181,6 @@ namespace CAIXA
             }
         }
 
+      
     }       
  }
