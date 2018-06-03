@@ -22,7 +22,7 @@ namespace CAIXA
         {
             this.formMenu = formMenu;
             InitializeComponent();           
-            LeitorDeTexto.Instancia.Falar("Você escolheu depósito \nDigite sua senha e o valor");           
+            LeitorDeTexto.Instancia.Falar("Você escolheu depósito \n Digite sua senha e o valor");           
         }       
        
     private async void btnValor_Click(object sender, EventArgs e)
@@ -83,7 +83,8 @@ namespace CAIXA
 
                             await Task.Delay(5000);
                             this.Close();
-                            formMenu.Show();
+                        LeitorDeTexto.Instancia.Falar("Digite o número para a opção desejada");
+                        formMenu.Show();
                         }
 
                 }else

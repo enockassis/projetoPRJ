@@ -37,7 +37,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblMensagem = new System.Windows.Forms.Label();
             this.lblMensagem1 = new System.Windows.Forms.Label();
-            this.btnSair = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label6
@@ -84,10 +83,10 @@
             this.btnConfirme.BackColor = System.Drawing.Color.Brown;
             this.btnConfirme.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirme.ForeColor = System.Drawing.Color.Yellow;
-            this.btnConfirme.Location = new System.Drawing.Point(834, 583);
+            this.btnConfirme.Location = new System.Drawing.Point(611, 579);
             this.btnConfirme.Name = "btnConfirme";
             this.btnConfirme.Size = new System.Drawing.Size(148, 62);
-            this.btnConfirme.TabIndex = 2;
+            this.btnConfirme.TabIndex = 3;
             this.btnConfirme.Text = "Confirme";
             this.btnConfirme.UseVisualStyleBackColor = false;
             this.btnConfirme.Click += new System.EventHandler(this.btnConfirme_Click);
@@ -96,6 +95,7 @@
             // 
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.Location = new System.Drawing.Point(425, 379);
+            this.txtSenha.MaxLength = 4;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = 'o';
             this.txtSenha.Size = new System.Drawing.Size(140, 24);
@@ -131,28 +131,14 @@
             this.lblMensagem1.Size = new System.Drawing.Size(0, 42);
             this.lblMensagem1.TabIndex = 22;
             // 
-            // btnSair
-            // 
-            this.btnSair.BackColor = System.Drawing.Color.Brown;
-            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.ForeColor = System.Drawing.Color.Yellow;
-            this.btnSair.Location = new System.Drawing.Point(425, 583);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(148, 62);
-            this.btnSair.TabIndex = 23;
-            this.btnSair.Text = "Sair";
-            this.btnSair.UseVisualStyleBackColor = false;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
-            // 
             // Conta
             // 
             this.AcceptButton = this.btnConfirme;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1284, 749);
             this.ControlBox = false;
-            this.Controls.Add(this.btnSair);
             this.Controls.Add(this.lblMensagem1);
             this.Controls.Add(this.lblMensagem);
             this.Controls.Add(this.label3);
@@ -182,6 +168,5 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblMensagem;
         private System.Windows.Forms.Label lblMensagem1;
-        private System.Windows.Forms.Button btnSair;
     }
 }

@@ -19,7 +19,7 @@ namespace CAIXA
         {
             this.formMenu = formMenu;
             InitializeComponent();
-            LeitorDeTexto.Instancia.Falar( "Você escolheu saldo \n Por favor digite sua senha e tecle confirme");
+            LeitorDeTexto.Instancia.Falar( "Você escolheu saldo \n Digite sua senha e tecle confirme");
         }    
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -46,7 +46,7 @@ namespace CAIXA
                     {
                         label3.Text = "R$ " + valorBD.ToString("N");
                         LeitorDeTexto.Instancia.Falar("O seu saldo é de: " + label3.Text);
-                        await Task.Delay(3000);
+                        await Task.Delay(2000);
                         //limpaTxt();                        
                         txtSenha.Text = "";
                         //lblMensagem.Text = "Retire seu cartão";
@@ -70,6 +70,7 @@ namespace CAIXA
             await Task.Delay(3000);
             
             this.Close();
+            LeitorDeTexto.Instancia.Falar("Digite o número para a opção desejada");
             formMenu.Show();
         }
 

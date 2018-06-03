@@ -21,7 +21,7 @@ namespace CAIXA
         {
             this.formMenu = formMenu;
             InitializeComponent();            
-            LeitorDeTexto.Instancia.Falar("Você escolheu saque \n Por favor digite sua senha e o valor do saque");
+            LeitorDeTexto.Instancia.Falar("Você escolheu saque \n Digite sua senha e o valor do saque");
         }
 
         private async void btnValor_Click(object sender, EventArgs e)
@@ -99,9 +99,14 @@ namespace CAIXA
             }
             finally
             {
-                await Task.Delay(3000);
+                await Task.Delay(5000);
                 this.Close();
+                await Task.Delay(1000);
                 formMenu.Show();
+                
+                LeitorDeTexto.Instancia.Falar("Digite o número para a opção desejada");
+                
+                
             }
         }        
        
@@ -145,8 +150,9 @@ namespace CAIXA
 
         private void btnSair_Click(object sender, EventArgs e)
         {
-            this.Close();
-            formMenu.Show();
+            
+            this.Close();            
+            formMenu.Show();            
         }
 
         private void txtValor_KeyPress(object sender, KeyPressEventArgs e)

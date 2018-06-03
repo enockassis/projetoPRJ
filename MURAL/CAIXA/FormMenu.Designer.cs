@@ -195,7 +195,7 @@
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(139, 75);
             this.btnCancelar.TabIndex = 14;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Text = "Voltar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -213,7 +213,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.CancelButton = this.button5;
             this.ClientSize = new System.Drawing.Size(1284, 749);
             this.ControlBox = false;

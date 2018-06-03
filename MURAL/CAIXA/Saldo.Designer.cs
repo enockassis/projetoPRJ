@@ -43,6 +43,7 @@
             // 
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.Location = new System.Drawing.Point(555, 336);
+            this.txtSenha.MaxLength = 4;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = 'o';
             this.txtSenha.Size = new System.Drawing.Size(140, 24);
@@ -107,7 +108,7 @@
             this.btnConfirme.Location = new System.Drawing.Point(555, 362);
             this.btnConfirme.Name = "btnConfirme";
             this.btnConfirme.Size = new System.Drawing.Size(137, 43);
-            this.btnConfirme.TabIndex = 11;
+            this.btnConfirme.TabIndex = 2;
             this.btnConfirme.Text = "Confirme";
             this.btnConfirme.UseVisualStyleBackColor = true;
             this.btnConfirme.Click += new System.EventHandler(this.btnConfirme_Click);
@@ -134,7 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1086, 749);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblValor);

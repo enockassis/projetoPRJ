@@ -87,10 +87,11 @@
             // 
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.Location = new System.Drawing.Point(677, 195);
+            this.txtSenha.MaxLength = 4;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = 'o';
             this.txtSenha.Size = new System.Drawing.Size(134, 24);
-            this.txtSenha.TabIndex = 0;
+            this.txtSenha.TabIndex = 1;
             this.txtSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSenha_KeyPress);
             // 
             // btnSenha
@@ -99,7 +100,7 @@
             this.btnSenha.Location = new System.Drawing.Point(831, 195);
             this.btnSenha.Name = "btnSenha";
             this.btnSenha.Size = new System.Drawing.Size(134, 49);
-            this.btnSenha.TabIndex = 1;
+            this.btnSenha.TabIndex = 2;
             this.btnSenha.Text = "Confirme";
             this.btnSenha.UseVisualStyleBackColor = true;
             this.btnSenha.Click += new System.EventHandler(this.btnSenha_Click);
@@ -121,7 +122,7 @@
             this.dtgExtrato.Name = "dtgExtrato";
             this.dtgExtrato.ReadOnly = true;
             this.dtgExtrato.Size = new System.Drawing.Size(461, 203);
-            this.dtgExtrato.TabIndex = 0;
+            this.dtgExtrato.TabIndex = 3;
             this.dtgExtrato.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgExtrato_CellContentClick);
             // 
             // exibirSaldoAtual
@@ -137,7 +138,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1284, 749);
             this.Controls.Add(this.exibirSaldoAtual);
             this.Controls.Add(this.dtgExtrato);
